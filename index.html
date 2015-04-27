@@ -11,19 +11,19 @@
   </head>
 
    <body>
-      <div class="container">
-         <table ng-controller="MultiplicationCtrl" class="table table-bordered">
-           <tr ng-repeat="numberA in numbers">
-               <td ng-repeat="numberB in numbers">
-                   {{ numberA * numberB }}
+      <div class="container" ng-controller="MultiplicationCtrl" initial-number-limit="10">
+         <label><input type="number" max="100" ng-model="numberLimit" placeholder="Enter a number"></label>
+         <table class="table table-bordered">
+           <tr ng-repeat="numberA in numbers()">
+               <td ng-repeat="numberB in numbers()">
+                   {{ compute(numberA, numberB) }}
                </td>
            </tr>
          </table>
        </div>
    
    
-   
-   
+      
    
         
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
